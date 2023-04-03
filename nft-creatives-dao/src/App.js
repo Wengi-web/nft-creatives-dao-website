@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
@@ -13,13 +13,13 @@ function App() {
     <Router>
       <div className="App">
         <Navbar />
-        <Router>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/about" component={AboutPage} />
-          <Route path="/contact" component={ContactPage} />
-          <Route path="/nft-creation" component={NFTCreationPage} />
-          <Route path="/dao-voting" component={DAOVotingPage} />
-        </Router>
+        <Routes>
+          <Route exact path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/nft-creation" element={<NFTCreationPage />} />
+          <Route path="/dao-voting" element={<DAOVotingPage />} />
+        </Routes>
         <Footer />
       </div>
     </Router>
